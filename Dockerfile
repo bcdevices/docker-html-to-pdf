@@ -15,10 +15,10 @@ RUN curl -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key ad
 		'google-chrome-stable=80.0.3987.116-1' && \
 	rm -rf /var/lib/apt/lists/*
 
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
 RUN apt-get update && \
 	apt-get install --no-install-recommends -y \
-		nodejs=8.17.0-1nodesource1 && \
+		nodejs=10.19.0-1nodesource1 && \
 	rm -rf /var/lib/apt/lists/*
 RUN npm install -g \
 	chrome-headless-render-pdf@1.8.4
