@@ -12,16 +12,16 @@ RUN curl -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key ad
 	echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list && \
 	apt-get update && \
 	apt-get install --no-install-recommends -y \
-		'google-chrome-stable=80.0.3987.116-1' && \
+		'google-chrome-stable=85.0.4183.83-1' && \
 	rm -rf /var/lib/apt/lists/*
 
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
 RUN apt-get update && \
 	apt-get install --no-install-recommends -y \
-		nodejs=10.19.0-1nodesource1 && \
+		nodejs=10.22.0-1nodesource1 && \
 	rm -rf /var/lib/apt/lists/*
 RUN npm install -g \
-	chrome-headless-render-pdf@1.8.4
+	chrome-headless-render-pdf@1.8.5
 
 RUN mkdir /tmp/html-to-pdf
 WORKDIR /tmp/html-to-pdf
